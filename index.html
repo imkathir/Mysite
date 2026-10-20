@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kathir Venkatachalam | Full-Stack & Senior Frontend Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @media print {
+      nav, footer, .no-print, #privacy-banner, .action-btn { display: none !important; }
+      body { background: white !important; color: #111827 !important; }
+      .print-border { border: 1px solid #e5e7eb !important; box-shadow: none !important; }
+      .masked-value { letter-spacing: normal !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-200">
+
+  <!-- Navigation / Controls -->
+  <header class="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-sm shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">KV</span>
+        <span class="font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Kathir Venkatachalam</span>
+      </a>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Global Privacy Toggle -->
+        <button id="global-toggle-btn" onclick="toggleGlobalPrivacy()" class="action-btn flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300 transition-all">
+          <svg id="global-eye-icon" class="w-4 h-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+          <span id="global-toggle-text">Reveal Contacts</span>
+        </button>
+
+        <!-- Print Resume -->
+        <button onclick="window.print()" class="no-print p-2 rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors" title="Print Resume">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+          </svg>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button onclick="toggleDarkMode()" class="p-2 rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors" title="Toggle Theme">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+    <!-- Hero / Profile -->
+    <section class="p-8 sm:p-10 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm relative overflow-hidden print-border">
+      <div class="max-w-3xl space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800 text-xs font-semibold text-indigo-700 dark:text-indigo-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          8+ Years Enterprise Experience
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-950 dark:text-white">
+          Kathir Venkatachalam
+        </h1>
+
+        <p class="text-lg sm:text-xl font-medium text-indigo-600 dark:text-indigo-400">
+          Full-Stack & Senior Frontend Engineer
+        </p>
+
+        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+          Full-Stack & Senior Frontend Engineer with over 8 years of production experience building high-scale enterprise SaaS products, combining 7 years of deep frontend specialization (JavaScript, Ember.js, modern web architecture) with robust backend systems engineering (Java, MySQL). Proven impact across flagship enterprise solutions including Zoho ERP, Zoho Books, and Zoho Inventory, specializing in client-side state architecture, web performance tuning, REST API design, and database optimization for international enterprise clients.
+        </p>
+      </div>
+
+      <!-- Masked Contact Bar -->
+      <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 font-mono text-xs">
+        
+        <!-- Masked Email -->
+        <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 flex items-center justify-between">
+          <div class="flex items-center gap-2.5 overflow-hidden">
+            <span class="text-slate-400">@</span>
+            <span id="masked-email" class="masked-value font-medium text-slate-800 dark:text-slate-200 truncate">k••••••@•••••.com</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <button onclick="toggleSingleMask('email')" class="p-1.5 hover:text-indigo-500 text-slate-400 rounded-md transition-colors" title="Toggle visibility">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </button>
+            <button onclick="copyToClipboard(contactData.email, this)" class="p-1.5 hover:text-indigo-500 text-slate-400 rounded-md transition-colors" title="Copy email">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Masked Phone -->
+        <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 flex items-center justify-between">
+          <div class="flex items-center gap-2.5 overflow-hidden">
+            <span class="text-slate-400">#</span>
+            <span id="masked-phone" class="masked-value font-medium text-slate-800 dark:text-slate-200 truncate">+91 ••••• •••••</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <button onclick="toggleSingleMask('phone')" class="p-1.5 hover:text-indigo-500 text-slate-400 rounded-md transition-colors" title="Toggle visibility">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </button>
+            <button onclick="copyToClipboard(contactData.phone, this)" class="p-1.5 hover:text-indigo-500 text-slate-400 rounded-md transition-colors" title="Copy phone">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Location & Languages -->
+        <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 flex items-center justify-between sm:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-2 text-slate-600 dark:text-slate-300">
+            <svg class="w-4 h-4 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span>Tamil Nadu, India</span>
+          </div>
+          <span class="text-[11px] text-slate-400">English, Tamil</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Section (Matched to Resume) -->
+    <section class="space-y-6">
+      <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
+        <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Technical Skills</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        
+        <!-- Frontend Engineering -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm print-border">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </span>
+            <h3 class="font-bold text-slate-900 dark:text-white">Frontend Engineering</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">JavaScript (ES6+)</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200/50 dark:border-indigo-800/50">Ember.js</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Component-Driven Architecture</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">State Management</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">DOM Optimization</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">SPA Lifecycle</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">HTML5 & CSS3/SCSS</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Responsive Web Apps</span>
+          </div>
+        </div>
+
+        <!-- Backend & System Design -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm print-border">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+              </svg>
+            </span>
+            <h3 class="font-bold text-slate-900 dark:text-white">Backend & System Design</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200/50 dark:border-emerald-800/50">Java</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">RESTful APIs</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Anti-Abuse & Rate Limiting</span>
+          </div>
+        </div>
+
+        <!-- Databases & Data Management -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm print-border">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-9 h-9 rounded-xl bg-amber-50 dark:bg-amber-950/70 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+              </svg>
+            </span>
+            <h3 class="font-bold text-slate-900 dark:text-white">Databases & Data Management</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200/50 dark:border-amber-800/50">MySQL</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Query Optimization</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Row-Level Locking</span>
+          </div>
+        </div>
+
+        <!-- Tooling, Testing & Practices -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm print-border">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-9 h-9 rounded-xl bg-purple-50 dark:bg-purple-950/70 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </span>
+            <h3 class="font-bold text-slate-900 dark:text-white">Tooling, Testing & Practices</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Git</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Webpack</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Postman</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">CI/CD</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">End-to-End Feature Delivery</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section class="space-y-6">
+      <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
+        <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Professional Experience</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Zoho Corporation | Chennai, India</p>
+      </div>
+
+      <div class="space-y-6 relative before:absolute before:inset-0 before:left-3 sm:before:left-4 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-800">
+        
+        <!-- Role 1: Full-Stack / Backend Engineer -->
+        <div class="relative pl-8 sm:pl-10">
+          <div class="absolute left-1.5 sm:left-2.5 -translate-x-1/2 top-1.5 w-3.5 h-3.5 rounded-full bg-indigo-600 ring-4 ring-white dark:ring-slate-950"></div>
+          
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm print-border">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Full-Stack / Backend Engineer</h3>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 w-fit">August 2025 – Present</span>
+            </div>
+            <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-4">Zoho ERP & Zoho Finance Suite (Zoho Books, Zoho Inventory)</p>
+
+            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300 list-disc list-outside ml-4">
+              <li>Build and scale full-stack capabilities across Zoho ERP and the Zoho Finance Suite (Zoho Books, Zoho Inventory), connecting modern web frontends to resilient Java services.</li>
+              <li>Designed and implemented automated spam mitigation and fraud detection mechanisms at the onboarding stage, cutting dummy organization creation without introducing UI friction for legitimate users.</li>
+              <li>Partnered directly with UI engineers to design clean, contract-first REST endpoints that optimized payload size and reduced client-side rendering latency.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Role 2: Senior Frontend Engineer -->
+        <div class="relative pl-8 sm:pl-10">
+          <div class="absolute left-1.5 sm:left-2.5 -translate-x-1/2 top-1.5 w-3.5 h-3.5 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-white dark:ring-slate-950"></div>
+          
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm print-border">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Senior Frontend Engineer</h3>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 w-fit">May 2019 – August 2025</span>
+            </div>
+            <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-4">Zoho ERP, Zoho Inventory, Zoho Books</p>
+
+            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300 list-disc list-outside ml-4">
+              <li>Owned and delivered end-user interface modules for Zoho ERP, Zoho Inventory, and Zoho Books, serving millions of active global businesses.</li>
+              <li>Architected large-scale Single Page Applications using Ember.js, establishing reusable design patterns, robust state machines, and clean data-flow architectures.</li>
+              <li>Engineered high-frequency transactional UIs including multi-currency payables and bulk item replenishment.</li>
+              <li>Bridged product management, accounting compliance, and UX design to transform intricate enterprise workflows into intuitive, performant user interfaces.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Role 3: Frontend Developer Intern -->
+        <div class="relative pl-8 sm:pl-10">
+          <div class="absolute left-1.5 sm:left-2.5 -translate-x-1/2 top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-white dark:ring-slate-950"></div>
+          
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm print-border">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Frontend Developer Intern</h3>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 w-fit">August 2018 – April 2019</span>
+            </div>
+            <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-4">Finance Application Workflows</p>
+
+            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300 list-disc list-outside ml-4">
+              <li>Implemented modular UI components, cross-browser styling, and client-side form validation mechanisms for finance application workflows.</li>
+              <li>Collaborated with senior engineers on bug fixing, accessibility standards, and unit test coverage across key customer-facing flows.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Key Projects & Impact Section -->
+    <section class="space-y-6">
+      <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
+        <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Key Projects & Impact</h2>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm print-border">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Self-Serve Onboarding & Anti-Abuse Shield</h3>
+          <span class="text-xs font-mono font-medium px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 w-fit">Role: Full-Stack Engineer</span>
+        </div>
+
+        <div class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+          <p><strong class="text-slate-900 dark:text-white font-medium">Scope:</strong> Seamless user registration combined with real-time heuristic validation to block bot-driven tenant proliferation across the ecosystem.</p>
+          <p><strong class="text-slate-900 dark:text-white font-medium">Engineering:</strong> Built client-side pre-validation flows paired with backend rate limiting and behavioral scoring, safeguarding infrastructure resources while keeping sign-up conversion high.</p>
+        </div>
+
+        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap gap-2 text-xs font-mono">
+          <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Java</span>
+          <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">MySQL</span>
+          <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Rate Limiting</span>
+          <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">RESTful APIs</span>
+          <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Ember.js</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="space-y-6">
+      <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
+        <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Education</h2>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm print-border flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">Bachelor of Engineering (B.E.) in Electronics and Communication Engineering (ECE)</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Sri Krishna College of Engineering and Technology, Coimbatore</p>
+        </div>
+        <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 w-fit">Graduated: 2019</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-400 dark:text-slate-500">
+    <p>© 2026 Kathir Venkatachalam. Built with privacy masking enabled.</p>
+  </footer>
+
+  <script>
+    const contactData = {
+      email: "kathirmw54@gmail.com",
+      phone: "+91 9626019429",
+      maskedEmail: "k••••••@•••••.com",
+      maskedPhone: "+91 ••••• •••••"
+    };
+
+    let isEmailRevealed = false;
+    let isPhoneRevealed = false;
+
+    function updateDisplay() {
+      const emailEl = document.getElementById('masked-email');
+      const phoneEl = document.getElementById('masked-phone');
+      const globalBtnText = document.getElementById('global-toggle-text');
+
+      if (emailEl) emailEl.textContent = isEmailRevealed ? contactData.email : contactData.maskedEmail;
+      if (phoneEl) phoneEl.textContent = isPhoneRevealed ? contactData.phone : contactData.maskedPhone;
+
+      if (globalBtnText) {
+        globalBtnText.textContent = (isEmailRevealed && isPhoneRevealed) ? "Hide Contacts" : "Reveal Contacts";
+      }
+    }
+
+    function toggleSingleMask(type) {
+      if (type === 'email') isEmailRevealed = !isEmailRevealed;
+      if (type === 'phone') isPhoneRevealed = !isPhoneRevealed;
+      updateDisplay();
+    }
+
+    function toggleGlobalPrivacy() {
+      const newState = !(isEmailRevealed && isPhoneRevealed);
+      isEmailRevealed = newState;
+      isPhoneRevealed = newState;
+      updateDisplay();
+    }
+
+    function copyToClipboard(text, btnElement) {
+      navigator.clipboard.writeText(text).then(() => {
+        const originalSvg = btnElement.innerHTML;
+        btnElement.innerHTML = `
+          <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        `;
+        setTimeout(() => { btnElement.innerHTML = originalSvg; }, 1500);
+      });
+    }
+
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
